@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# OS
+.DS_Store
+
+# Transcriptions complètes des vidéos analysées : usage local uniquement.
+# Ce contenu appartient à ses auteurs et n'est pas redistribué sur le dépôt public.
+# Le dépôt publie à la place references/corpus-index.json (métadonnées + accroche).
+# Pour régénérer le corpus complet localement :
+#   python3 scripts/build_corpus.py <dossier contenant les transcriptions>
+references/corpus/
