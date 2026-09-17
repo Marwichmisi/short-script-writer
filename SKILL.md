@@ -218,6 +218,7 @@ contenu vidéo d'un autre créateur sans le créditer.
 | `assets/script-template.md` | Gabarit de livraison |
 | `scripts/build_corpus.py` | Régénère le corpus et les métriques depuis un dossier de transcriptions |
 | `scripts/find_examples.py` | Retrouve les exemples d'un style (ou par mot-clé) |
+| `scripts/validate.py` | Auto-vérification du skill (frontmatter, liens, cohérence des styles) |
 | `README.md` | Installation, usage, maintenance du corpus |
 
 ## Ajouter des scripts au corpus (le créateur récupère d'autres shorts)

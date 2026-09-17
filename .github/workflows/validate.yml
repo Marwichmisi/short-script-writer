@@ -1,0 +1,28 @@
+name: valider le skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Valider la structure du skill
+        run: python3 scripts/validate.py
+
+      - name: Vérifier que le CLI skills découvre bien le skill
+        run: npx -y skills add . --list
+
+      - name: Régénérer l'index du corpus (doit rester stable)
+        run: |
+          python3 scripts/build_corpus.py --help
+          python3 scripts/find_examples.py a1-astuce-si-tu --stats

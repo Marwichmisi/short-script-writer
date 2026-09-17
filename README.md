@@ -88,6 +88,9 @@ python3 scripts/find_examples.py --calibrer "le texte complet du script"
 # Reconstruire le corpus et les métriques depuis un dossier de transcripts
 python3 scripts/build_corpus.py /home/marwane/Documents/Game/inspire-scripte/scripts_out
 python3 scripts/build_corpus.py /chemin/vers/scripts_out --dry-run
+
+# Vérifier l'intégrité du skill (frontmatter, liens, styles, index)
+python3 scripts/validate.py
 ```
 
 ## Règle de calibrage (mesurée sur le corpus)
@@ -130,7 +133,15 @@ short-script-writer/
 │       └── actu-culture.md
 └── scripts/
     ├── build_corpus.py          régénère corpus/, corpus-index.json et corpus-metrics.md
-    └── find_examples.py         recherche d'exemples + calibrage
+    ├── find_examples.py         recherche d'exemples + calibrage
+    └── validate.py              auto-vérification (frontmatter, liens, cohérence)
+```
+
+L'intégrité du dépôt est vérifiée à chaque `push` par GitHub Actions
+(`.github/workflows/validate.yml`). En local :
+
+```bash
+python3 scripts/validate.py            # code de sortie 0 = dépôt cohérent
 ```
 
 ## Corpus : ce qui est publié et ce qui reste local
