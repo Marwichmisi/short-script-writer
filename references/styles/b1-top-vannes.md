@@ -5,12 +5,12 @@
 traités comme des vannes : observation juste, punchline, on passe au suivant. Le
 spectateur reste pour l'item suivant, pas pour la chute.
 
-| Paramètre | Valeur observée sur 5 scripts |
+| Paramètre | Valeur observée sur 7 scripts |
 |---|---|
 | Durée | 60 à 64 s (format long, proche de la limite du format court) |
-| Budget | 248 à 309 mots (~25 caractères/seconde, le débit le plus rapide du corpus) |
-| Voix | tutoiement + auto-dérision first person + interpellations « mon pote », « frérot » |
-| CTA | **aucun** sur les 5 scripts ; la fin est une vanne, pas une demande d'abonnement (le seul CTA de la chaîne appartient au style `b3-quiz-score`) |
+| Budget | 248 à 309 mots (~25 caractères/seconde, parmi les débits les plus rapides du corpus) |
+| Voix | tutoiement + auto-dérision first person + interpellations « mon pote », « frérot » (« vous » seulement en formule figée : « pour vous donner une idée ») |
+| CTA | **aucun** sur les 7 scripts ; la fin est une vanne, pas une demande d'abonnement (le seul CTA de la chaîne appartient au style `b3-quiz-score`) |
 | Titre | TOUT EN MAJUSCULES + point d'exclamation |
 
 ## Structure (beat par beat)
@@ -83,6 +83,10 @@ respecté : le spectateur compte.
 - `6ZVqegNBVoQ` (60 s) — items objets avec bénéfice concret puis vanne finale.
 - `iiu0AC3MEXc` (61 s) — sensations désagréables : chaque item est un souvenir partagé
   (« Quand tu crois que ça fait 1 heure que tu joues alors qu'en fait ça fait 4 heures. »).
+- `qRLkPcdPEEc` (63 s) — « 9 trucs inutiles qu'on adore » : le top assume l'inutile, la
+  vanne porte sur le plaisir coupable (« laissez-moi tout casser, je vous en supplie »).
+- `bEPBt6amHho` (61 s) — variante **plainte** : « 8 trucs qu'on veut PLUS voir », le top
+  est un règlement de comptes collectif.
 
 ## Anti-patterns
 
@@ -100,4 +104,6 @@ respecté : le spectateur compte.
 - **Objets utiles** : un objet de jeu dont on aurait besoin tous les jours.
 - **Typologies** : les différents types de joueurs / de créateurs / de rageux.
 - **Sensations** : les petits désagréments universels du joueur.
+- **Plaisirs coupables** : les trucs inutiles qu'on adore quand même.
+- **Plainte collective** : ce qu'on ne veut plus voir — le top devient pétition.
 - **Quiz (voir `b3-quiz-score`)** : quand le sujet se prête au score, la liste devient test.

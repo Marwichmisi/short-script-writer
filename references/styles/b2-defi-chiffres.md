@@ -1,17 +1,17 @@
 # Style `b2-defi-chiffres`
 
-**Famille** B — Gaming à vannes (chaîne source : Jey & Max)
-**Signature** Un exploit (ou un contenu) que presque personne n'a vu, décortiqué par des
-chiffres absurdes et des conditions de plus en plus longues. L'accroche est une
+**Famille** B — Gaming à vannes (chaînes sources : Jey & Max, y0us, Jinskow, ShotaPrime)
+**Signature** Un exploit, un test ou un lore que presque personne n'a vu, décortiqué par
+des chiffres absurdes et des conditions de plus en plus longues. L'accroche est une
 **statistique de rareté** : « la majorité des joueurs ne verront jamais ça ».
 
-| Paramètre | Valeur observée sur 5 scripts |
+| Paramètre | Valeur observée sur 18 scripts |
 |---|---|
-| Durée | 60 à 71 s |
-| Budget | 229 à 272 mots (~22 caractères/seconde) |
-| Voix | tutoiement ; le spectateur est mis à la place du joueur (« tu dois », « il te faudra ») |
-| CTA | **aucun** — la fin est une clôture narrative ou un dernier palier |
-| Titre | MAJUSCULES + chiffre ou superlatif + point d'exclamation |
+| Durée | 42 à 97 s (viser 60-70 s ; 42-55 s pour un comparatif ou un test, 90 s et plus pour un comparatif cinéma exceptionnel) |
+| Budget | 167 à 506 mots (~24 caractères/seconde) |
+| Voix | tutoiement ; le spectateur est mis à la place du joueur (« tu dois », « il te faudra ») ; « vous » possible (formule figée « pour vous donner une idée », créateurs y0us/Jinskow) |
+| CTA | **aucun** en fin — la fin est une clôture narrative ou un dernier palier ; sas d'abonnement mid-video autorisé avant le dernier palier (variantes y0us/Jinskow) |
+| Titre | MAJUSCULES + chiffre ou superlatif + point d'exclamation ; variante y0us : Casse Titre + « #shorts » seul |
 
 ## Structure (beat par beat)
 
@@ -41,6 +41,15 @@ l'étape la plus faible.
    fondateur)
 5. « Tu préfères tuer 3 enfants ou massacrer un village? » (variante dilemme : ouverture sur
    le choix impossible, puis explication de la quête)
+6. « Tu ne peux pas battre ce boss sans débrancher ta manette, et ce pour une raison très
+   simple : il est capable de lire dans tes pensées. » (variante mécanique impossible :
+   la rareté devient une condition absurde)
+7. « Voici les 4 meilleures scènes coupées de Spider-Man: Brand New Day, et la première
+   aurait complètement changé le film. » (variante countdown : le compte à rebours
+   4→1 remplace la statistique de rareté)
+8. « Je me suis toujours demandé qu'est-ce que ça fait de mettre les 4 Brainrots OG dans
+   la Fuse Machine. » (variante test en direct : le défi est annoncé au « je », les
+   chiffres sont les pourcentages du test)
 
 ## Rythme et sonorités
 
@@ -55,6 +64,9 @@ l'étape la plus faible.
 - Aucune vanne toutes les deux phrases (contrairement à `b1-top-vannes`) : l'humour vient
   de l'absurdité des chiffres, pas de punchlines.
 - Le script explique **comment y accéder**, pas comment gagner : c'est la promesse.
+- Débit plafond : au-delà de ~25 car./s (cas y0us : 28,6 car./s sur 5 scripts), le script
+  devient difficile à suivre — réserver ce débit aux sujets dont le public connaît déjà
+  tous les noms (Marvel, Fortnite), et le signaler au créateur.
 
 ## Lexique
 
@@ -77,6 +89,17 @@ l'étape la plus faible.
   récit chronologique avec la périphrase « il va donc le manipuler ».
 - `WjO4j2Lb068` (71 s, The Witcher 3) — variante dilemme : l'accroche est une question
   binaire, le corps explique la quête sans trancher avant la fin.
+- `OStzTeNInL4` (65 s, 2,3 M vues — record du style) — variante mécanique impossible :
+  le boss lit dans tes pensées, la solution (changer de port manette) est retardée
+  jusqu'à la fin. Modèle du « tu ne peux pas… sauf si ».
+- `7Drj1_lz1mc` (61 s) — variante **countdown lore** (y0us) : top 4→1 de scènes coupées,
+  chaque palier finit sur « mais c'est pas le plus fou parce que… », sas d'abonnement
+  avant le n° 1. Modèle pour un lore cinéma/séries.
+- `zqN_zvWP5RM` (59 s, 1,6 M vues) — variante **test en direct** : 4 items passés un par
+  un dans la machine avec pourcentages affichés, sas-pari avant le résultat (« seuls
+  ceux qui pensent que je vais avoir un Griffin ont le droit de s'abonner »).
+- `j5IuTXme6ck` (60 s) — variante **théorie** : « je vais vous prouver que… », les
+  chiffres sont des indices qui convergent vers la conclusion.
 
 ## Anti-patterns
 
@@ -94,3 +117,11 @@ l'étape la plus faible.
 - **Boss impossible à rencontrer** : rareté + prérequis en cascade (le jeu cache l'accès).
 - **Lore fondateur** : événement passé raconté comme une conséquence inévitable.
 - **Dilemme impossible** : question binaire en ouverture, conséquences des deux options.
+- **Countdown lore** : compte à rebours N→1, chaque palier teasé comme « pas le plus
+  fou », sas d'abonnement avant le n° 1 (modèle y0us, 60-97 s).
+- **Test en direct** : le créateur passe les items en revue devant nous, chiffres
+  affichés, sas-pari avant le résultat (modèle `zqN_zvWP5RM`, `3Mt-QW1fpN8`).
+- **Question-stats** : « quel X a le plus de Y » — comparatif quantifié court, 42-52 s
+  (modèles `HbMGF7Jy7Gw`, `OgxX4x4VcEU`).
+- **Mécanique impossible** : « tu ne peux pas… sauf si » — la solution absurde est
+  retardée jusqu'à la fin (modèle `OStzTeNInL4`).

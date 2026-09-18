@@ -1,16 +1,17 @@
 # Style `a2-objet-mecanisme`
 
-**Famille** A — Curiosité & Astuces (chaîne source : Fitness-Muscu)
-**Signature** Décoder un objet ou un phénomène courant que tout le monde voit sans savoir
-comment il marche. Le ton est celui d'une démonstration, pas d'une leçon.
+**Famille** A — Curiosité & Astuces (chaînes sources : Fitness-Muscu, ShotaPrime, Jinskow,
+CieloTech, Ysto Roblox, luK)
+**Signature** Décoder un objet, un lieu ou un phénomène courant que tout le monde voit
+sans savoir comment il marche. Le ton est celui d'une démonstration, pas d'une leçon.
 
-| Paramètre | Valeur observée sur 4 scripts |
+| Paramètre | Valeur observée sur 13 scripts |
 |---|---|
-| Durée | 19 à 24 s (le format le plus court du corpus) |
-| Budget | 71 à 99 mots (~23 caractères/seconde) |
-| Voix | tutoiement, glissements vers l'impératif quand il y a un geste à faire |
+| Durée | 18 à 49 s (18-25 s pour un objet, 35-50 s pour un lieu, un univers ou une thèse) |
+| Budget | 71 à 215 mots (~23 caractères/seconde) |
+| Voix | tutoiement ou vouvoiement selon le créateur (7 scripts sur 13 vouvoient) ; impératif quand il y a un geste à faire |
 | CTA | **aucun** |
-| Titre | emoji d'alerte ou curiosité + promesse tronquée par « … » |
+| Titre | emoji d'alerte ou curiosité + promesse tronquée par « … » ; titres nus possibles pour les lieux (« Cette Cascade Cache un ÉNORME Secret.. ») |
 
 ## Structure (beat par beat)
 
@@ -34,6 +35,11 @@ pouvoir suivre sans image.
    l'orthopédiste sont faites en fonction de la taille de pied du client. »
 4. « Voici une démonstration qui montre la puissance des robots nettoyeurs vu que quelle
    que soit la tâche, la machine peut la laver. »
+5. « Mais d'où vient la trend six seven qui explose en ce moment sur tous les réseaux? »
+   (variante origine : le « phénomène » est une mode, le mécanisme est son histoire)
+6. « Le O de Roblox n'est pas un O. » (variante minimale : 36 s, un logo, une preuve)
+7. « Qu'est-ce qui se cache depuis des années derrière mon fond vert? » (variante lieu :
+   le mystère porte sur un endroit, la preuve est montrée)
 
 Deux gabarits dominants : la **question de connaissance** (« Est-ce que tu savais que… »)
 et l'**annonce d'objet** (« Ce [objet] a été conçu pour… »). Les deux se terminent dans les
@@ -68,10 +74,17 @@ et l'**annonce d'objet** (« Ce [objet] a été conçu pour… »). Les deux se 
   vocabulaire (« en boucle et en boucle », « progressivement ») mime le geste de la machine.
 - `M18GkzcGB70` (24 s) — utilise le prix comme mystère d'entrée, puis justifie le prix par
   le procédé (moule sur mesure).
+- `SxZoR62TPSU` (36 s) — décodage minimal : un logo, une contre-vérité, une preuve.
+  Modèle quand le sujet tient en une phrase.
+- `-V4pv6lqkpc` (49 s) — décodage d'univers (les BackRooms d'Inoxtag) : le « mécanisme »
+  est une théorie qui relie les indices. Modèle pour un lieu ou un univers fictif.
+- `Ezp6LgsnLzU` (36 s) — variante prix pur (« C'est quoi le PC le plus cher de
+  France? ») : l'objet est un record, le mécanisme est ce qui justifie le montant.
 
 ## Anti-patterns
 
-- Vouloir expliquer l'objet **et** son histoire : le budget de 90 mots ne le permet pas.
+- Vouloir expliquer l'objet **et** son histoire : le budget court (90 mots) ne le permet
+  pas — pour objet + histoire, voir `d1-lore-enquete`.
 - Donner le nom technique de l'objet en premier : garder le mot courant.
 - Terminer sur le mécanisme : le corpus finit toujours sur le bénéfice ou la preuve.
 - Introduire un CTA ou une question aux commentaires.
@@ -81,3 +94,8 @@ et l'**annonce d'objet** (« Ce [objet] a été conçu pour… »). Les deux se 
 - **Test sur soi** : le spectateur peut reproduire l'expérience immédiatement (main, souffle).
 - **Justification d'un prix** : l'objet est cher, on démonte la raison de chaque euro.
 - **Comparaison de conditions** : le même objet sous plusieurs réglages ou durées.
+- **Lieu ou univers** : le mystère porte sur un endroit (fond vert, cascade, BackRooms),
+  35-50 s, preuve montrée.
+- **Origine d'une mode** : d'où vient vraiment cette trend (modèle `72bQtogTtWw`, 41 s).
+- **Thèse conceptuelle** : défendre une affirmation contre-intuitive (« les jeux Roblox
+  ne sont PAS des jeux », modèle `M-UXxoKDs98`, 47 s).

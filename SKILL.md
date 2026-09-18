@@ -1,14 +1,15 @@
 ---
 name: short-script-writer
-description: "Écrire des scripts de vidéos courtes (YouTube Shorts, TikTok, Reels) en s'inspirant de 8 styles issus d'un corpus de 35 shorts réels : astuce-si-tu, objet-mécanisme, fait-choc, top-vannes, défi-chiffres, quiz-score, actu-émotion, top-culturel. Utiliser quand l'utilisateur veut écrire, rédiger, améliorer, décliner ou critiquer un script de short ; quand il demande un style de script ou veut imiter une chaîne ; ou quand il fournit une transcription de référence. Demande toujours le style voulu, puis livre accroche, script calibré au débit réel, plan de tournage et titres. Mots-clés : script vidéo courte, short, shorts, tiktok, reels, hook, accroche, script youtube."
+description: "Écrire des scripts de vidéos courtes (YouTube Shorts, TikTok, Reels) en s'inspirant de 11 styles issus d'un corpus de 97 shorts réels : astuce-si-tu, objet-mécanisme, fait-choc, top-vannes, défi-chiffres, quiz-score, notation-verdict, actu-émotion, top-culturel, lore-enquête, top-suspense. Utiliser quand l'utilisateur veut écrire, rédiger, améliorer, décliner ou critiquer un script de short ; quand il demande un style de script, des tags ou des hashtags ; quand il veut imiter une chaîne ; ou quand il fournit une transcription de référence. Demande toujours le style voulu, puis livre accroche, script calibré au débit réel, plan de tournage, titres, tags et hashtags. Mots-clés : script vidéo courte, short, shorts, tiktok, reels, hook, accroche, script youtube, tags, hashtags."
 ---
 
 # Écrire des scripts de vidéo courte
 
 Ce skill fait écrire un script de short **dans un style précis**, choisi par le créateur,
-en s'appuyant sur un corpus de 35 transcriptions de shorts français réels (analyse :
+en s'appuyant sur un corpus de 97 transcriptions de shorts français réels (analyse :
 `references/corpus-metrics.md`). Les styles ne sont pas des impressions : chacun a une
-structure, un budget de mots, un lexique et des anti-patterns mesurés.
+structure, un budget de mots, un lexique, des anti-patterns et une convention
+tags/hashtags mesurés.
 
 **Règle d'or : ne jamais commencer à écrire sans avoir fait choisir un style.**
 
@@ -18,8 +19,12 @@ structure, un budget de mots, un lexique et des anti-patterns mesurés.
 2. **Le script complet**, calibré sur la durée demandée (débit réel du corpus : ~22
    caractères/seconde, soit ~4 mots/seconde)
 3. **Un découpage beat par beat** avec indications de tournage ou de visuel
-4. **Deux titres** conformes à la convention du style (emoji ou MAJUSCULES)
-5. **Une auto-vérification** contre la checklist du style
+4. **Deux titres** conformes à la convention du style (emoji ou MAJUSCULES ou hashtags,
+   selon la fiche)
+5. **Tags & hashtags** : hashtags de titre et/ou de description + tags YouTube, selon la
+   convention mesurée du style (`references/hashtags.md`, générateur
+   `scripts/suggest_tags.py`)
+6. **Une auto-vérification** contre la checklist du style
 
 Sortie par défaut : tout dans la conversation, en markdown. Si le créateur veut un
 fichier, écrire `<slug-du-sujet>.md` à côté de son projet.
@@ -33,14 +38,17 @@ Ne pas choisir à sa place, ne pas écrire plusieurs styles d'office.
 
 | # | Style | Pour quel sujet | Durée | Marqueur reconnaissable |
 |---|---|---|---|---|
-| 1 | `a1-astuce-si-tu` | une méthode ou une erreur à corriger | 18-33 s | « Si tu [situation]… » |
-| 2 | `a2-objet-mecanisme` | un objet ou un phénomène à décoder | 19-24 s | « Est-ce que tu savais que… » |
-| 3 | `a3-fait-choc` | un fait stupéfiant ou un récit réel | 19-54 s | « il va réaliser que… » (périphrase d'escalade) |
+| 1 | `a1-astuce-si-tu` | une méthode ou une erreur à corriger | 18-45 s | « Si tu [situation]… » |
+| 2 | `a2-objet-mecanisme` | un objet, un lieu ou un phénomène à décoder | 18-49 s | « Est-ce que tu savais que… » |
+| 3 | `a3-fait-choc` | un fait stupéfiant ou un récit réel | 18-66 s | « il va réaliser que… » (périphrase d'escalade) |
 | 4 | `b1-top-vannes` | une liste drôle et vacharde | 60-64 s | « 9 trucs que… » + une vanne par item |
-| 5 | `b2-defi-chiffres` | un exploit ou un contenu quasi introuvable | 60-71 s | « La majorité des joueurs ne verront jamais… » |
+| 5 | `b2-defi-chiffres` | un exploit, un test ou un lore quasi introuvable | 42-97 s | « La majorité des joueurs ne verront jamais… » |
 | 6 | `b3-quiz-score` | un auto-test en points | 60 s | « 10 questions, un point par… » |
-| 7 | `c1-actu-emotion` | une actualité artistique qui touche | 61-75 s | « X a bouleversé tout le monde. » + CTA |
-| 8 | `c2-top-culturel` | un classement culturel qui raconte une histoire | 70 s | « 3 chansons qui ont marqué l'histoire de… » |
+| 7 | `b4-notation-verdict` | noter des setups, composants ou annonces | 41-66 s | « Je NOTE… » + note sur 10 ou tier |
+| 8 | `c1-actu-emotion` | une actualité artistique qui touche | 61-75 s | « X a bouleversé tout le monde. » + CTA |
+| 9 | `c2-top-culturel` | un classement culturel qui raconte une histoire | 70 s | « 3 chansons qui ont marqué l'histoire de… » |
+| 10 | `d1-lore-enquete` | l'histoire vraie et datée d'un jeu ou d'un univers | 33-75 s | « Tu connais X? En fait… » + dates-preuves |
+| 11 | `d2-top-suspense` | un top 3 de moments de créateurs | 35-61 s | « Les 3… ?! » + teasing du dernier + sas abo |
 
 Présenter le menu sous forme de question numérotée, avec deux ou trois mots d'exemple par
 ligne pour que le créateur se projette. Si le créateur répond « je ne sais pas » ou donne
@@ -87,7 +95,15 @@ Pour retrouver les exemples pertinents sans lire tout le corpus :
 
 ```bash
 python3 scripts/find_examples.py a1-astuce-si-tu
-python3 scripts/find_examples.py "erreur" --grep   # cherche un mot dans le corpus
+python3 scripts/find_examples.py b2-defi-chiffres --top   # les plus vus d'abord
+python3 scripts/find_examples.py "erreur"   # cherche un mot dans tout le corpus
+```
+
+Pour les tags et hashtags, lire `references/hashtags.md` (règles mesurées par style) et
+s'en servir pour générer la proposition :
+
+```bash
+python3 scripts/suggest_tags.py --style d2-top-suspense --sujet "ton sujet" --createur "Nom"
 ```
 
 Si le style demandé n'existe pas encore dans `references/styles/`, le dire clairement et
@@ -112,8 +128,10 @@ Calculer la cible à partir de la durée, puis **la respecter au mot près** :
 | 70 s | ~280 | ~1 540 |
 
 Le débit est le point de contrôle le plus fiable : **trop court = silence gênant, trop long
-= fin coupée sur la plateforme**. Cette fourchette est mesurée sur 35 shorts (20-25
-car./s) ; ne pas la dépasser pour « faire plus complet ».
+= fin coupée sur la plateforme**. Cette fourchette est mesurée sur 97 shorts (21-25
+car./s) ; ne pas la dépasser pour « faire plus complet ». Exception documentée : la
+variante y0us de `b2-defi-chiffres` monte à ~29 car./s — réservée aux sujets dont le
+public connaît déjà tous les noms.
 
 ### 3.2 Écrire beat par beat
 
@@ -123,9 +141,11 @@ Suivre la table des beats de la fiche de style. Pour chaque beat :
 - utiliser les formules d'accroche et les connecteurs listés dans la fiche (ils sont tirés
   du corpus, donc directement reconnaissables pour l'audience) ;
 - garder la personne grammaticale du style (« tu » pour A et B, 3e personne + « vous » pour
-  C) ;
-- respecter le CTA du style : aucun pour A, B1, B2 ; question de score pour B3 ;
-  question + abonnement pour C.
+  C ; voir chaque fiche pour les variantes — `a2`, `d1` et `d2` ont leurs propres règles) ;
+- respecter le CTA du style : aucun pour A (sauf sas créateurs documenté), B1, B2 (sauf
+  sas mid-video) ; question de score pour B3 ; verdict noté sans CTA pour B4 ;
+  question + abonnement pour C et D1 ; sas d'abonnement + renvoi « Va voir ma dernière
+  vidéo » pour D2.
 
 Pendant la rédaction : **ne jamais expliquer ce qu'on est en train de faire** (« dans cette
 vidéo », « je vais vous montrer »). Le spectateur est dans le contenu.
@@ -139,9 +159,25 @@ ACCROCHE (0-5 s) — mot pour mot
 TEXTE (beat par beat) — lignes courtes, respirations marquées par `/`
 TOURNAGE / VISUEL — ce qu'on voit à l'écran pour chaque beat
 TITRE — 2 propositions conformes à la convention du style
+TAGS & HASHTAGS — hashtags de titre et/ou de description + tags YouTube (voir Étape 3bis)
 ```
 
 Ajouter une ligne `Mots : X / cible Y` et `Durée estimée : Z s` pour prouver la calibration.
+
+### 3bis. Tags & hashtags (systématique, pas optionnel)
+
+Chaque livraison inclut les 3 blocs, générés avec `scripts/suggest_tags.py` puis vérifiés
+à la main (orthographe des noms propres, aucun hashtag hors sujet) :
+
+1. **Hashtags de titre** — seulement si la fiche du style en met (`b4`, `d2`, variante
+   y0us de `b2`, parfois Shota en `a3`) ; sinon titre sans hashtag.
+2. **Hashtags de description** — 3 à 5 en fin de description (`d1`, `c1`/`c2`) ;
+   sujet d'abord, communauté ensuite (`#doors #rooms #abandonne #roblox`).
+3. **Tags YouTube** — 5 à 15 quand l'univers en a mesuré (gaming, pc, roblox, cinéma,
+   musique) ; aucun pour `d2`, `c1`/`c2` (convention du corpus).
+
+Règle d'or : **hashtags dans le titre OU en description, jamais les deux**
+(détail et exemples réels : `references/hashtags.md`).
 
 ---
 
@@ -151,14 +187,17 @@ Passer le script dans cette checklist et **corriger avant d'afficher le résulta
 
 - [ ] Le style est nommé en tête de réponse et la fiche a bien été lue.
 - [ ] L'accroche respecte la **longueur** du style (5 s max) et son gabarit.
-- [ ] Tous les beats de la fiche sont présents, y compris le dernier (chute / CTA).
+- [ ] Tous les beats de la fiche sont présents, y compris le dernier (chute / verdict / CTA).
 - [ ] Le nombre de mots est dans la fourchette cible ±10 %.
 - [ ] La personne grammaticale du style est respectée du début à la fin.
-- [ ] Un seul CTA, conforme au style — et absent si le style n'en a pas.
+- [ ] Un seul CTA, conforme au style — et absent si le style n'en a pas (`d2` : sas + renvoi, pas d'abo final martelé en plus).
 - [ ] Aucune phrase ne recopie le corpus (voir Garde-fous).
 - [ ] Aucun fait inventé : les chiffres, dates et noms sont vérifiés ou marqués `[à vérifier]`.
-- [ ] Le titre suit la convention : emoji + « … » (famille A), MAJUSCULES + « ! » (famille B),
-      emoji final (famille C).
+- [ ] Le titre suit la convention : emoji + « … » (famille A hors variantes gaming),
+      MAJUSCULES + « ! » (`b1`, `b2` hors y0us), Casse Titre + hashtags (`b4`, `d2`,
+      y0us), titre nu + hashtags en description (`d1`), emoji final (`c1`/`c2`).
+- [ ] Les 3 blocs tags/hashtags sont livrés et conformes à `references/hashtags.md`
+      (titre OU description, jamais les deux).
 
 Si un point échoue, réécrire la partie concernée et refaire passer la checklist. Signaler au
 créateur les compromis faits (par exemple : « le sujet ne permet pas de beat 5, je l'ai
@@ -186,8 +225,8 @@ son sujet en changeant deux mots, ou produire une paraphrase qui suit la même p
 d'origine. La bonne manière : lire 3-5 exemples, puis écrire à partir de la structure et
 des formules génériques listées dans la fiche.
 
-**Exactitude.** Les styles A3, B2 et C1 reposent sur des faits (études, records, dates,
-artistes). Ne jamais inventer un chiffre pour « faire style » : si l'information n'est pas
+**Exactitude.** Les styles A3, B2, C1 et D1 reposent sur des faits (études, records, dates,
+artistes, archives de jeux). Ne jamais inventer un chiffre pour « faire style » : si l'information n'est pas
 sûre, la marquer `[à vérifier]` et le signaler dans la réponse. Un chiffre faux ruine la
 crédibilité du format entier.
 
@@ -208,16 +247,18 @@ contenu vidéo d'un autre créateur sans le créditer.
 
 | Fichier | Contenu |
 |---|---|
-| `SKILL.md` | Le workflow : choix du style, ancrage, écriture, vérification |
+| `SKILL.md` | Le workflow : choix du style, ancrage, écriture, tags, vérification |
 | `references/style-index.md` | Arbre de décision sujet → style |
-| `references/styles/*.md` | 8 fiches de style (beats, accroches, lexique, anti-patterns) |
-| `references/corpus/*.md` | 35 transcriptions réelles, groupées par chaîne (usage local) |
+| `references/styles/*.md` | 11 fiches de style (beats, accroches, lexique, anti-patterns) |
+| `references/hashtags.md` | Conventions tags/hashtags mesurées par style |
+| `references/corpus/*.md` | 97 transcriptions réelles, groupées par univers (usage local) |
 | `references/corpus-index.json` | Index publiable : métadonnées + accroche de chaque vidéo |
 | `references/corpus-styles.json` | Carte `video_id` → style |
 | `references/corpus-metrics.md` | Débits et budgets mesurés, règle de calibrage |
 | `assets/script-template.md` | Gabarit de livraison |
 | `scripts/build_corpus.py` | Régénère le corpus et les métriques depuis un dossier de transcriptions |
-| `scripts/find_examples.py` | Retrouve les exemples d'un style (ou par mot-clé) |
+| `scripts/find_examples.py` | Retrouve les exemples d'un style (ou par mot-clé), tri `--top` par vues |
+| `scripts/suggest_tags.py` | Génère tags & hashtags selon la convention du style |
 | `scripts/validate.py` | Auto-vérification du skill (frontmatter, liens, cohérence des styles) |
 | `README.md` | Installation, usage, maintenance du corpus |
 
@@ -270,8 +311,10 @@ TEXTE (beat par beat)
 VISUEL : écran du téléphone en gros plan pour le réglage, avant/après sur la batterie.
 Mots : 96 / cible 100 · Durée estimée : 25 s.
 TITRE : « 😳 Ton téléphone se décharge trop vite… » / « 👀 Le réglage qui vide ta batterie… »
+TAGS : (aucun hashtag titre/description pour `a1` — convention du style ; tags YouTube
+si l'univers en a : `téléphone, batterie, réglage, shorts`)
 ```
 
 Ce qui rend cet exemple conforme : accroche « Si tu… », erreur commune écartée avant la
 méthode, impératifs dans la méthode, un seul résultat, **aucun CTA**, titre à emoji
-tronqué par « … ».
+tronqué par « … », blocs tags présents même quand la convention dit « aucun ».

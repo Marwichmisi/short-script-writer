@@ -1,17 +1,21 @@
 # Style `a3-fait-choc`
 
-**Famille** A — Curiosité & Astuces (chaîne source : Fitness-Muscu)
+**Famille** A — Curiosité & Astuces (chaînes sources : Fitness-Muscu, ShotaPrime, luK,
+Ysto Roblox, Jinskow)
 **Signature** Un fait stupéfiant ou un récit qui monte en tension, raconté avec la
 périphrase d'escalade « et puis il va… », et qui finit sur un détail révélateur. Le
 spectateur doit rester pour voir **où ça s'arrête**.
 
-| Paramètre | Valeur observée sur 7 scripts |
+| Paramètre | Valeur observée sur 21 scripts |
 |---|---|
-| Durée | 19 à 54 s (viser 25-35 s, 54 s pour un récit à étapes) |
-| Budget | 74 à 231 mots (~22 caractères/seconde) |
-| Voix | 3e personne pour l'histoire, retour au « tu » pour les expériences |
-| CTA | **aucun**, parfois une question de chute (« est-ce que c'est une réussite? ») |
-| Titre | emoji fort (😳 💀 😭) + extrait de l'histoire tronqué par « … » |
+| Durée | 18 à 66 s (viser 25-35 s, 50 s et plus pour un récit à étapes ou en grappe) |
+| Budget | 53 à 254 mots (~22 caractères/seconde) |
+| Voix | 3e personne pour l'histoire, retour au « tu » pour les expériences ; « vous » possible chez les créateurs (ShotaPrime, Jinskow) |
+| CTA | **aucun** en principe, parfois une question de chute (« est-ce que c'est une réussite? ») ; sas d'abonnement mid-video toléré dans les variantes créateurs (ShotaPrime, luK : 5 scripts sur 21) |
+| Titre | emoji fort (😳 💀 😭) + extrait de l'histoire tronqué par « … » ; titres directs en Casse Titre possibles (« Ce YouTubeur est Mort en Pleine Vidéo ») |
+
+> Avec 21 scripts et 1,08 M de vues médianes, c'est le style le plus fourni et le plus
+> performant du corpus.
 
 ## Structure (beat par beat)
 
@@ -42,6 +46,10 @@ jour 5, jour 14, jour 21…). Le second est le plus virulent : les dates créent
    une nouvelle figure tous les jours. »
 6. « Si tu mets un poulet à frire pendant 1 seconde, il reste encore cru. » (variante
    graduée : 1 s / 1 min / 10 min / 1 h)
+7. « Ce youtubeur est mort en pleine vidéo. » (variante drama : le fait est annoncé
+   sans détour, l'escalade porte sur le mystère autour)
+8. « Mais qui est le tout premier abonné de MrBeast? » (variante enquête : la chute est
+   une réponse retardée par un sas d'abonnement)
 
 Le marqueur « ce mec / ce propriétaire / ce boss » est un signal d'entrée immédiat : il
 annonce un cas particulier réel, pas une généralité.
@@ -83,6 +91,13 @@ annonce un cas particulier réel, pas une généralité.
   chute est le 4e résultat. Le plus court et le plus imitable.
 - `e7BptwuKw7E` (25 s) — la chute est une découverte visuelle montrée à l'écran (la plaque),
   le script peut donc s'arrêter net.
+- `STgqUYeWBAM` (48 s, 1,3 M vues) — modèle du **drama créateurs** : fait annoncé sans
+  détour, escalade sur le mystère (tweet, réactions), sas d'abonnement mid-video, renvoi
+  vers une autre vidéo en sortie.
+- `ixUbPC9SDec` (32 s) — modèle de l'**enquête courte** : une question, des indices
+  (tweets retrouvés), sas d'abonnement (« on rush les 100 000 abonnés »), réponse.
+- `SLhROPfhupY` (18 s, 1 M vues) — version ultra-courte : un fait d'actu en 3 phrases,
+  sans escalade. Preuve que le style tient dès 18 s quand le fait se suffit.
 
 ## Anti-patterns
 
@@ -101,3 +116,11 @@ annonce un cas particulier réel, pas une généralité.
 - **Feuilleton daté** : jours 1 à 31 d'une tentative contre un objectif fixé.
 - **J'ai testé** : passage au « je » pour un test que le créateur a réellement fait
   (« moi perso c'est la map de WoW »), à n'utiliser que si le créateur a la matière.
+- **Drama créateurs en grappe** : plusieurs cas réels enchaînés (youtubeurs qui ont cassé
+  leur trophée, modèles `qFaeI4VhCKY` / `fjqkmYZeNUg`, 56-66 s) — chaque cas est un
+  mini-récit, le dernier est le plus fort.
+- **Actu courte** : un seul fait d'actualité communautaire en 18-30 s, sans escalade
+  (modèles `SLhROPfhupY`, `NiWa4B6XlZY`, `iM3IFzrXRmY`, `Ffnl70zF1v8`, `ttWgHsgJCiE`).
+- **Sas d'abonnement** : retarder la chute par un appel chiffré (« avant que je te le
+  dise, abonne-toi parce qu'on rush les 100 000 abonnés ») — réservé aux variantes
+  créateurs, jamais dans la version Fitness historique.

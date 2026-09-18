@@ -30,10 +30,17 @@ HERE = Path(__file__).resolve().parent
 SKILL_DIR = HERE.parent
 
 # Catégorie (link.txt) -> (fichier de sortie, titre du groupe)
+# Plusieurs catégories peuvent partager un fichier (ex : tout le gaming ensemble).
 GROUPES = {
     "Fitness muscu": ("curiosite-astuces.md", "Curiosité & Astuces"),
     "JeyEtMax": ("gaming.md", "Gaming"),
+    "YstoRoblox": ("gaming.md", "Gaming"),
+    "Jinskow": ("gaming.md", "Gaming"),
     "slimusic_off": ("actu-culture.md", "Actu & culture"),
+    "y0us_tv": ("actu-culture.md", "Actu & culture"),
+    "ShotaPrime": ("createurs-viral.md", "Créateurs & viral"),
+    "LuK_Vidéos": ("createurs-viral.md", "Créateurs & viral"),
+    "CieloTech": ("tech-setup.md", "Tech & setup"),
 }
 
 MOT = re.compile(r"[\w'\u2019-]+")
@@ -197,8 +204,28 @@ def ecrire_metriques(items: list[dict], styles: dict, groupes: dict, chemin: Pat
         "",
         "## Règle de calibrage",
         "",
-        "Le débit des 35 shorts est remarquablement stable : **20 à 25 caractères par seconde**",
-        "(espaces compris), soit **3,4 à 4,6 mots par seconde**. Deux estimations équivalentes :",
+    ]
+    # Fourchette mesurée sur les styles ayant au moins 3 exemples (les styles à
+    # 1 exemple — b3, c2 — sont trop fragiles pour cadrer le débit global).
+    solides = [g for g in par_style.values() if len(g) >= 3]
+    if solides:
+        cps_min = min(st.mean([t["cps"] for t in g]) for g in solides)
+        cps_max = max(st.mean([t["cps"] for t in g]) for g in solides)
+        mps_min = min(st.mean([t["mps"] for t in g]) for g in solides)
+        mps_max = max(st.mean([t["mps"] for t in g]) for g in solides)
+        lignes += [
+            f"Le débit des {len(items)} shorts est remarquablement stable : "
+            f"**{fr(cps_min, 0)} à {fr(cps_max, 0)} caractères par seconde**",
+            "(espaces compris), soit "
+            f"**{fr(mps_min, 1)} à {fr(mps_max, 1)} mots par seconde**. "
+            "Deux estimations équivalentes :",
+        ]
+    else:
+        lignes += [
+            "Le débit des shorts est remarquablement stable : **20 à 25 caractères par seconde**",
+            "(espaces compris), soit **3,4 à 4,6 mots par seconde**. Deux estimations équivalentes :",
+        ]
+    lignes += [
         "",
         "- `durée voulue (s) × 22` ≈ nombre de caractères du script",
         "- `durée voulue (s) × 4` ≈ nombre de mots du script",

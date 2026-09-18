@@ -37,12 +37,20 @@ Les mots à appuyer sont en **gras**.]
 1. [Titre conforme à la convention du style]
 2. [Titre alternatif]
 
-Convention : emoji + « … » (familles A) · MAJUSCULES + « ! » (familles B) ·
-emoji final (familles C)
+Convention : emoji + « … » (famille A hors variantes gaming) · MAJUSCULES + « ! »
+(`b1`, `b2` hors y0us) · Casse Titre + hashtags (`b4`, `d2`, y0us) · titre nu + hashtags
+en description (`d1`) · emoji final (famille C)
 
-## 5. Description / hashtags (si demandé)
+## 5. Tags & hashtags (systématique — voir `references/hashtags.md`)
 
-[1 à 2 lignes, plus les hashtags du sujet]
+Générer avec `python3 scripts/suggest_tags.py --style [style] --sujet "[sujet]"`,
+puis vérifier à la main.
+
+- **Hashtags de titre :** [à coller au titre, ou « aucun (convention du style) »]
+- **Hashtags de description :** [1-2 lignes de description + 3 à 5 hashtags, ou « aucune »]
+- **Tags YouTube :** [liste séparée par virgules, ou « aucun (convention du style) »]
+
+Règle : hashtags dans le titre OU en description, jamais les deux.
 
 ## 6. Auto-vérification
 
@@ -59,10 +67,13 @@ emoji final (familles C)
 
 | Style | CTA |
 |---|---|
-| `a1-astuce-si-tu`, `a2-objet-mecanisme`, `a3-fait-choc` | **aucun** |
-| `b1-top-vannes`, `b2-defi-chiffres` | **aucun** (finir sur la vanne ou le dernier palier) |
+| `a1-astuce-si-tu`, `a2-objet-mecanisme`, `a3-fait-choc` | **aucun** (sas mid-video toléré en variantes créateurs `a3`) |
+| `b1-top-vannes`, `b2-defi-chiffres` | **aucun** en fin (finir sur la vanne ou le dernier palier ; sas mid-video toléré en `b2`) |
 | `b3-quiz-score` | question sur le score uniquement |
+| `b4-notation-verdict` | **aucun** en fin (finir sur le verdict noté ; sas giveaway toléré) |
 | `c1-actu-emotion`, `c2-top-culturel` | question + « abonnez-vous pour ne pas rater l'actu musicale » |
+| `d1-lore-enquete` | question « Et toi…? » et/ou « Abonne-toi pour plus d'histoires » |
+| `d2-top-suspense` | sas d'abonnement avant le dernier item + « Va voir ma dernière vidéo » |
 
 ## Rappel du calibrage
 

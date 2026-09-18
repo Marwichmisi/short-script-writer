@@ -3,8 +3,8 @@
 [![skills.sh](https://skills.sh/b/Marwichmisi/short-script-writer)](https://skills.sh/Marwichmisi/short-script-writer)
 
 Écrire des scripts de vidéos courtes (YouTube Shorts, TikTok, Reels) **dans un style choisi
-par le créateur**, en s'inspirant d'un corpus de 35 transcripts de shorts français
-performants (1,4 M vues de médiane pour le groupe principal).
+par le créateur**, en s'inspirant d'un corpus de 97 transcripts de shorts français
+performants (87 M de vues cumulées, 721 k de médiane).
 
 ## Principe
 
@@ -41,7 +41,7 @@ Aucun paquet à installer : les scripts n'utilisent que la bibliothèque standar
 ## Utilisation
 
 Une fois le skill actif, il suffit de demander un script de short ; le skill présente le
-menu des 8 styles et attend le choix.
+menu des 11 styles et attend le choix.
 
 ```
 Écris-moi un script de short sur les erreurs de débutant en musculation, style au choix.
@@ -51,18 +51,24 @@ Je veux un script de 45 s dans le style b2-defi-chiffres sur le boss le plus lon
 l'histoire du jeu vidéo.
 ```
 
-### Les 8 styles
+### Les 11 styles
 
 | # | Identifiant | Sujet type | Durée | CTA |
 |---|---|---|---|---|
-| 1 | `a1-astuce-si-tu` | une méthode, une erreur à corriger | 18-33 s | aucun |
-| 2 | `a2-objet-mecanisme` | décoder un objet ou un phénomène | 19-24 s | aucun |
-| 3 | `a3-fait-choc` | un fait stupéfiant, un récit réel | 19-54 s | aucun |
+| 1 | `a1-astuce-si-tu` | une méthode, une erreur à corriger | 18-45 s | aucun |
+| 2 | `a2-objet-mecanisme` | décoder un objet, un lieu, un phénomène | 18-49 s | aucun |
+| 3 | `a3-fait-choc` | un fait stupéfiant, un récit réel | 18-66 s | aucun (sas créateurs toléré) |
 | 4 | `b1-top-vannes` | une liste drôle et vacharde | 60-64 s | aucun |
-| 5 | `b2-defi-chiffres` | un record, un contenu quasi introuvable | 60-71 s | aucun |
+| 5 | `b2-defi-chiffres` | un record, un test, un lore quasi introuvable | 42-97 s | aucun (sas mid-video toléré) |
 | 6 | `b3-quiz-score` | un auto-test en points | 60 s | score en commentaire |
-| 7 | `c1-actu-emotion` | une actualité artistique qui touche | 61-75 s | question + abonnement |
-| 8 | `c2-top-culturel` | un classement culturel raconté | 70 s | question + abonnement |
+| 7 | `b4-notation-verdict` | noter setups, composants, annonces | 41-66 s | aucun (verdict noté) |
+| 8 | `c1-actu-emotion` | une actualité artistique qui touche | 61-75 s | question + abonnement |
+| 9 | `c2-top-culturel` | un classement culturel raconté | 70 s | question + abonnement |
+| 10 | `d1-lore-enquete` | l'histoire vraie et datée d'un jeu | 33-75 s | question + abonnement |
+| 11 | `d2-top-suspense` | un top 3 de moments de créateurs | 35-61 s | sas + renvoi vidéo |
+
+Chaque livraison inclut aussi **titres, tags & hashtags** selon la convention mesurée
+du style (`references/hashtags.md` + `scripts/suggest_tags.py`).
 
 Détail complet de chaque style : `references/styles/`. Aide au choix :
 `references/style-index.md`.
@@ -82,8 +88,14 @@ python3 scripts/find_examples.py c1-actu-emotion --stats
 # Chercher une tournure dans tout le corpus
 python3 scripts/find_examples.py "la plupart des gens"
 
+# Les exemples les plus vus d'un style d'abord
+python3 scripts/find_examples.py b2-defi-chiffres --top -n 5
+
 # Vérifier la calibration d'un script avant livraison
 python3 scripts/find_examples.py --calibrer "le texte complet du script"
+
+# Générer tags & hashtags selon la convention du style
+python3 scripts/suggest_tags.py --style d2-top-suspense --sujet "ton sujet" --createur "Nom"
 
 # Reconstruire le corpus et les métriques depuis un dossier de transcripts
 python3 scripts/build_corpus.py /home/marwane/Documents/Game/inspire-scripte/scripts_out
@@ -95,8 +107,8 @@ python3 scripts/validate.py
 
 ## Règle de calibrage (mesurée sur le corpus)
 
-Le débit des 35 shorts est très stable : **20 à 25 caractères par seconde** (espaces
-compris), soit **3,4 à 4,6 mots par seconde**. Donc :
+Le débit des 97 shorts est très stable : **21 à 25 caractères par seconde** (espaces
+compris), soit **3,7 à 4,5 mots par seconde**. Donc :
 
 - `nombre de mots ≈ durée (s) × 4`
 - `nombre de caractères ≈ durée (s) × 22`
@@ -118,22 +130,29 @@ short-script-writer/
 │   ├── corpus-metrics.md        débits et budgets mesurés (généré)
 │   ├── corpus-styles.json       carte video_id → style
 │   ├── corpus-index.json        index publiable : métadonnées + accroche (généré)
-│   ├── styles/                  8 fiches de style
+│   ├── hashtags.md              conventions tags/hashtags mesurées par style
+│   ├── styles/                  11 fiches de style
 │   │   ├── a1-astuce-si-tu.md
 │   │   ├── a2-objet-mecanisme.md
 │   │   ├── a3-fait-choc.md
 │   │   ├── b1-top-vannes.md
 │   │   ├── b2-defi-chiffres.md
 │   │   ├── b3-quiz-score.md
+│   │   ├── b4-notation-verdict.md
 │   │   ├── c1-actu-emotion.md
-│   │   └── c2-top-culturel.md
+│   │   ├── c2-top-culturel.md
+│   │   ├── d1-lore-enquete.md
+│   │   └── d2-top-suspense.md
 │   └── corpus/                  transcripts complets — LOCAL, non publié (généré)
 │       ├── curiosite-astuces.md
 │       ├── gaming.md
-│       └── actu-culture.md
+│       ├── actu-culture.md
+│       ├── createurs-viral.md
+│       └── tech-setup.md
 └── scripts/
     ├── build_corpus.py          régénère corpus/, corpus-index.json et corpus-metrics.md
-    ├── find_examples.py         recherche d'exemples + calibrage
+    ├── find_examples.py         recherche d'exemples + calibrage (+ --top par vues)
+    ├── suggest_tags.py          génère tags & hashtags selon la convention du style
     └── validate.py              auto-vérification (frontmatter, liens, cohérence)
 ```
 
@@ -146,7 +165,7 @@ python3 scripts/validate.py            # code de sortie 0 = dépôt cohérent
 
 ## Corpus : ce qui est publié et ce qui reste local
 
-Le skill a été construit en analysant 35 YouTube Shorts. Leur contenu parlé appartient à
+Le skill a été construit en analysant 97 YouTube Shorts. Leur contenu parlé appartient à
 leurs auteurs :
 
 | Fichier | Publié | Contenu |
@@ -180,5 +199,5 @@ en copiant la structure d'une fiche existante et en y mettant les chiffres mesur
 ## Garde-fous
 
 Le corpus est une référence de **style**, jamais une banque de textes : aucun passage ne
-doit être recopié. Les styles factuels (`a3`, `b2`, `c1`) interdisent d'inventer des
+doit être recopié. Les styles factuels (`a3`, `b2`, `c1`, `d1`) interdisent d'inventer des
 chiffres, des dates ou des citations — un fait non vérifié est marqué `[à vérifier]`.

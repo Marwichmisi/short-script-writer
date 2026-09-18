@@ -13,10 +13,14 @@ Trois usages :
     python3 find_examples.py --calibrer "le texte du script à vérifier"
         Mesure un script candidat et le compare aux cibles de duree.
 
+    python3 find_examples.py b2-defi-chiffres --top
+        Exemples du style triés par vues décroissantes (les plus performants d'abord).
+
 Options :
     -n 3        nombre d'exemples a afficher (defaut : 3)
     --complet   affiche le texte entier plutot qu'un extrait
     --stats     affiche seulement les statistiques du style
+    --top       trie les exemples par vues décroissantes
 """
 
 from __future__ import annotations
@@ -104,14 +108,26 @@ def afficher(e: dict, complet: bool) -> None:
     print(f"   TEXTE : {corps}\n")
 
 
-def par_style(style: str, n: int, complet: bool) -> int:
+def vues_int(e: dict) -> int:
+    """Convertit le compteur de vues (int ou '1 234 567') en entier triable."""
+    v = e.get("vues", 0)
+    if isinstance(v, int):
+        return v
+    chiffres = re.sub(r"\D", "", str(v))
+    return int(chiffres) if chiffres else 0
+
+
+def par_style(style: str, n: int, complet: bool, top: bool = False) -> int:
     exemples = [e for e in charger() if e["style"] == style]
     if not exemples:
         dispo = sorted({e["style"] for e in charger()})
         print(f"❌ Style inconnu : {style}\n   Styles disponibles : {', '.join(dispo)}")
         return 1
 
-    print(f"# {len(exemples)} exemple(s) pour `{style}`\n")
+    if top:
+        exemples = sorted(exemples, key=vues_int, reverse=True)
+    print(f"# {len(exemples)} exemple(s) pour `{style}`"
+          + (" (triés par vues décroissantes)" if top else "") + "\n")
     for e in exemples[:n]:
         afficher(e, complet)
 
@@ -196,6 +212,8 @@ def main() -> None:
     ap.add_argument("--complet", action="store_true", help="afficher les textes entiers")
     ap.add_argument("--stats", action="store_true",
                     help="afficher seulement les statistiques du style")
+    ap.add_argument("--top", action="store_true",
+                    help="trier les exemples par vues décroissantes")
     ap.add_argument("--calibrer", metavar="TEXTE", help="mesurer un script candidat")
     args = ap.parse_args()
 
@@ -208,10 +226,10 @@ def main() -> None:
     if args.requete in styles:
         if args.stats:
             sys.exit(statistiques(args.requete))
-        sys.exit(par_style(args.requete, args.n, args.complet))
+        sys.exit(par_style(args.requete, args.n, args.complet, args.top))
     if re.match(r"^[a-z]\d(-|$)", args.requete):
         # ressemble à un identifiant de style (a1-…, b2-…, c3-…) : message dédié
-        sys.exit(par_style(args.requete, args.n, args.complet))
+        sys.exit(par_style(args.requete, args.n, args.complet, args.top))
     if args.stats:
         sys.exit(statistiques(args.requete))
     sys.exit(par_motif(args.requete, args.n, args.complet))

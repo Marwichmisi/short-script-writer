@@ -1,16 +1,17 @@
 # Style `a1-astuce-si-tu`
 
-**Famille** A — Curiosité & Astuces (chaîne source : Fitness-Muscu)
+**Famille** A — Curiosité & Astuces (chaînes sources : Fitness-Muscu, Jinskow, CieloTech,
+Ysto Roblox)
 **Signature** Une situation banale où tout le monde se plante, puis **la** méthode qui
 renverse la situation. Le spectateur doit pouvoir se dire « c'est exactement mon cas ».
 
-| Paramètre | Valeur observée sur 8 scripts |
+| Paramètre | Valeur observée sur 13 scripts |
 |---|---|
-| Durée | 18 à 33 s (viser 22-27 s) |
-| Budget | 85 à 125 mots (~23 caractères/seconde) |
-| Voix | tutoiement intégral, zéro « vous » |
-| CTA | **aucun** — pas de « abonnez-vous », pas de question finale |
-| Titre | emoji d'alerte + situation tronquée par « … » |
+| Durée | 18 à 45 s (viser 22-30 s, 35-45 s pour une astuce gaming en plusieurs essais) |
+| Budget | 85 à 200 mots (~24 caractères/seconde) |
+| Voix | tutoiement dominant ; « vous » toléré dans les variantes gaming (Jinskow) |
+| CTA | **aucun** en principe — un merci conditionnel (« abonne-toi si cette astuce t'a aidé ») toléré, jamais de question finale |
+| Titre | emoji d'alerte + situation tronquée par « … » ; titres directs (« ASTUCE pour… », « Tu Peux… ! ») dans les variantes gaming |
 
 ## Structure (beat par beat)
 
@@ -50,8 +51,8 @@ concrète dans le corps du script.
 ## Rythme et sonorités
 
 - Un short = **1 seule astuce**. Deux astuces diluent le beat 3 et cassent la promesse.
-- Connecteurs signature à réutiliser : « vu que » (9 scripts sur 19), « et donc »,
-  « à la place », « la plupart des gens », « en boucle et en boucle ».
+- Connecteurs signature à réutiliser : « vu que », « et donc », « à la place »,
+  « la plupart des gens », « en boucle et en boucle ».
 - Presque aucune phrase de plus de 25 mots : la respiration se fait par des virgules et
   des « et », pas par des points.
 - Interdit de parler de la vidéo elle-même (« dans cette vidéo ») : le spectateur est
@@ -74,14 +75,22 @@ concrète dans le corps du script.
   un impératif : modèle pour tout tutoriel gestuel.
 - `mUHv_le2mgY` (22 s) — construit sur le **refus** : trois erreurs écartées avant la
   solution. Excellent quand l'astuce est morale plutôt que technique.
+- `Hjoyq-LUgMw` (45 s) — astuce gaming longue : la méthode est prouvée par plusieurs
+  essais montrés (« après quelques essais, j'ai exactement ce que je cherchais »).
+  Modèle quand l'astuce exige une démonstration.
+- `mJhyVpG-yUk` (33 s) — astuce-action immédiate (« tu peux dès maintenant… ») : pas de
+  mise en scène, la méthode est utilisable à la fin du short.
+- `8Vt-kzLPWm8` (38 s) — variante **débunk** : une fausse astuce qui circule est testée
+  en direct et démolie (« il y a rien du tout »).
 
 ## Anti-patterns
 
-- Ajouter un CTA : les 19 shorts de cette famille n'en ont **aucun**.
+- Ajouter un CTA : la famille A n'en a quasiment **aucun** (un seul merci conditionnel
+  sur 13 scripts en a1).
 - Commencer par le fait scientifique ou le nom du produit : l'accroche doit être une
   situation vécue.
-- Utiliser « vous » en même temps que « tu » (1 seul script sur 19 le fait, et c'est un
-  défaut de transcription).
+- Mélanger « vous » et « tu » sans raison (toléré seulement dans les variantes gaming,
+  où le « vous » porte le direct).
 - Finir par une morale ou un « voilà, j'espère que ça vous a plu ».
 
 ## Variantes
@@ -90,3 +99,8 @@ concrète dans le corps du script.
 - **Comparaison de réglages** : « pendant 1 seconde / 1 minute / 10 minutes / 1 heure » —
   même objet, quatre réglages, conclusion surprenante.
 - **Mécanisme invisible** : partir d'un effet visible puis remonter à la cause physique.
+- **Astuce gaming prouvée** : méthode + essais montrés + résultat (« après quelques
+  essais… »), 35-45 s.
+- **Débunk** : tester en direct une astuce qui circule et montrer qu'elle ne marche pas.
+- **Piège à éviter** : « N'allez JAMAIS… car si vous faites X, alors Y » (modèle
+  `CzYgJBoqQCA`, 40 s).
